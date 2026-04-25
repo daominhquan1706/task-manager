@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "826148711029",
+    "firebase_url": "https://daominhquanproject20200913.firebaseio.com",
+    "project_id": "daominhquanproject20200913",
+    "storage_bucket": "daominhquanproject20200913.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826148711029:android:a994b65877718b72be663c",
+        "android_client_info": {
+          "package_name": "com.daominhquan.task_manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826148711029-m7dasm0bo25fn9opuhu7e38kbji924vb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQubu-g9j4fkeXau6DAZnkg7jDn3DkQC8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826148711029-m7dasm0bo25fn9opuhu7e38kbji924vb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "826148711029-9i78coo7snfjlf3k5n3asjdnpssj95a5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.daominhquan.task-manager-Staging"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

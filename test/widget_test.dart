@@ -5,7 +5,7 @@ import 'package:task_manager/main.dart';
 
 void main() {
   testWidgets('shows KanbanPro login screen', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const MyApp(home: LoginScreen()));
 
     expect(find.text('Welcome back'), findsOneWidget);
     expect(
@@ -18,12 +18,13 @@ void main() {
     expect(find.text('Forgot password?'), findsOneWidget);
     expect(find.text('Remember me'), findsOneWidget);
     expect(find.widgetWithText(ElevatedButton, 'Login'), findsOneWidget);
+    expect(find.text('Continue with Google'), findsOneWidget);
     expect(find.text("Don't have an account?"), findsOneWidget);
     expect(find.text('Register'), findsOneWidget);
   });
 
   testWidgets('toggles password visibility', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const MyApp(home: LoginScreen()));
 
     expect(find.byTooltip('Show password'), findsOneWidget);
 
