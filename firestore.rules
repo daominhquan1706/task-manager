@@ -1,0 +1,29 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isProjectMember(projectId) {
+      return signedIn()
+        && get(/databases/$(database)/documents/projects/$(projectId))
+          .data.memberIds.hasAny([request.auth.uid]);
+    }
+
+    match /projects/{projectId} {
+      allow read: if signedIn()
+        && resource.data.memberIds.hasAny([request.auth.uid]);
+      allow create: if signedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.memberIds.hasAny([request.auth.uid]);
+      allow update, delete: if signedIn()
+        && resource.data.memberIds.hasAny([request.auth.uid]);
+
+      match /tasks/{taskId} {
+        allow read, write: if isProjectMember(projectId);
+      }
+    }
+  }
+}
